@@ -1,0 +1,70 @@
+[project]
+authors = [
+    {name = "Padraic Slattery", email = "pgoslatara@gmail.com"}
+]
+dependencies = [
+    "pillow>=11.0.0",
+    "qrcode>=8.0",
+    "requests>=2.32.3",
+]
+description = "Create QR codes for your presentations."
+name = "qr-code-creator"
+readme = "README.md"
+requires-python = ">=3.9,<3.14"
+version = "1.0.0"
+
+[project.scripts]
+qr_code_creator = "qr_code_creator.main:cli"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit<4",
+    "ruff<1",
+]
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 88
+indent-width = 4
+target-version = "py311"
+
+[tool.ruff.lint]
+ignore = ["COM812", "D100", "D203", "D213", "D406", "D407", "D409", "E501", "G004", "S101"]
+preview=true
+select = ["A", "ARG", "B", "C4", "COM", "D", "DOC", "E", "EXE", "F", "I", "ICN", "LOG", "G", "N", "PT", "PTH", "Q", "RUF", "S", "SIM", "T20", "TCH", "TID", "W"]
+unfixable = ["B"]
+
+[tool.ruff.format]
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+indent-style = "space"
+line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false
